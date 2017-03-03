@@ -1,0 +1,9 @@
+#! /usr/bin/env php
+<?php
+
+error_reporting( E_ALL );
+
+include 'src/tdop.php';
+include 'tests/lib.php';
+
+test();

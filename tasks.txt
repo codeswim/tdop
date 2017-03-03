@@ -4,4 +4,4 @@ Know what you are working on
    4. [NONE] Implement just-enough of Parser, parse() to parse 'var a = 1;'
    3. [NONE] Implement Scope, scope()
    2. [NONE] Implement Token, tokens()
-   1. [NONE] Simplify test runner from prototype
+   1. [DONE] Simplify test runner from prototype (2017-03-03 damonz@codeswim.com)

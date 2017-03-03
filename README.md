@@ -24,7 +24,11 @@ Turn source code into an array of Token objects.
 
 ## Tests
 
-    php tests/run.php
+	# Use either:
+    ./tests/run
+	# or:
+	php tests/run
+	
 	tacos 29/29 (100.00)% 
 
 ## Contributors
