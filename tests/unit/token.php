@@ -1,15 +1,13 @@
 <?php
 
-return [[
+return [
 
-'desc' => 'Empty token has no properties.', 'test' => function(){
+'Empty token has no properties.' => function(){
 	$t = token();
 	return get_object_vars( $t ) === [];
-}
+},
 
-],[
-
-'desc' => 'Simple Token to_array().', 'test' => function(){
+'Simple Token to_array().' => function(){
 	$t = token();
 	$t->id = 'a';
 	$t->nud = null;
@@ -17,22 +15,18 @@ return [[
 		'id' => 'a',
 		'nud' => null,
 	];
-}
+},
 
-],[
-
-'desc' => 'Can add/call methods to/on Token.', 'test' => function(){
+'Can add/call methods to/on Token.' => function(){
 	$t = token();
 	$t->id = '@';
 	$t->nud = function(){
 		return $this->id;
 	};
 	return $t->nud() === '@';
-}
+},
 
-],[
-
-'desc' => 'Use Token as prototype for Token.', 'test' => function(){
+'Use Token as prototype for Token.' => function(){
 	$o = token();
 	$o->id = '=';
 	$t = token( $o );
@@ -43,11 +37,9 @@ return [[
 		'from' => 5,
 		'to' => 6,
 	];
-}
+},
 
-],[
-
-'desc' => 'Token to_array() when Token property is Token.', 'test' => function(){
+'Token to_array() when Token property is Token.' => function(){
 	$a = token();
 	$a->id = 'a';
 	$equals = token();
@@ -61,4 +53,4 @@ return [[
 	];
 }
 
-]];
+];

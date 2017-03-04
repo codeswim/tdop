@@ -35,22 +35,23 @@ function test(){
 	$tests = [];
 	$me = dirname( __FILE__ );
 	foreach( $files as $file ){
-		$fn = str_replace( $me, '', substr( $file, 0, strlen( $file ) - 4 /* strlen( .php )*/ ));
+		$fn = str_replace( $me.'/', '', $file );
 		$tests[$fn] = include $file;
 	}
 	$results = array_fill_keys( ['passed', 'failed', 'count'], 0 ); 
 
 // Run tests 
 
-	foreach( $tests as $fn => $fn_tests ){
-		foreach( $fn_tests as $idx => $test ){
+	foreach( $tests as $fn => $tests_in_file ){
+		foreach( $tests_in_file as $desc => $test ){
 			try{
-				$passed = $test['test']();
+				$passed = $test();
 				$results[($passed ? 'passed' : 'failed' )] += 1;
-				if( ! $passed ) $tests[$fn][$idx]['actual'] = false;
+				if( $passed ) $tests[$fn][$desc] = true;
+				else $tests[$fn][$desc] = false;
 			}catch( Exception $e ){	
 				$results['failed'] += 1;
-				$tests[$fn][$idx]['actual'] = $e->getMessage();
+				$tests[$fn][$desc] = $e->getMessage();
 			}
 		}
 	}
@@ -71,10 +72,13 @@ function test(){
 
 // Display test failures expected and actual results
 
-	foreach( $tests as $fn => $fn_tests ){
-		foreach( $fn_tests as $idx => $test ){
-			if( array_key_exists( 'actual', $test )){
-				echo $test['desc'].' failed.'.PHP_EOL;
+	if( $results['failed'] ) echo 'The following tests failed:'.PHP_EOL;
+	foreach( $tests as $fn => $tests_in_file ){
+		foreach( $tests_in_file as $desc => $result ){
+			if( $result === false ){
+				echo 'In '.$fn.', the test "'.$desc.'" failed.'.PHP_EOL;
+			}elseif( is_string( $result )){
+				echo 'In '.$fn.', unexpected exception for "'.$desc.'": '.$result.PHP_EOL;
 			}
 		}
 	}
