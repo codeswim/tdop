@@ -3,5 +3,5 @@ Know what you are working on
    5. [NONE] Parse 'function a(){ var a = 1; }'
    4. [NONE] Implement just-enough of Parser, parse() to parse 'var a = 1;'
    3. [NONE] Implement Scope, scope()
-   2. [SOME] Implement Token, tokens()
-   1. [REDO] Simplify test runner from prototype (2017-03-04 damonz@codeswim.com)
+   2. [DONE] Implement Token, tokens() (2017-03-05 damonz@codeswim.com))
+   1. [DONE] Simplify test runner from prototype (2017-03-05 damonz@codeswim.com)

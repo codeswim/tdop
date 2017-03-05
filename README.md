@@ -18,8 +18,11 @@ Developed on Mac OS X (Darwin Kernel Version 15.5.0) using PHP5.5.34
 
 ## API Reference
 
-### tokens( $source )
+### tokens( $source, $keys = null )
 	$source JavaScript source code.
+	$keys null: return array of Token objects
+          []: return array of arrays (apply ->to_array() on all Token objects)
+          ['name', 'type']: return array of arrays but only return keys name and type
 Turn source code into an array of Token objects.
 
 ## Tests
@@ -29,7 +32,7 @@ Turn source code into an array of Token objects.
 	# or:
 	php tests/run
 	
-	tacos 29/29 (100.00)% 
+	tacos 55/55 (100.00)%
 
 ## Contributors
 
