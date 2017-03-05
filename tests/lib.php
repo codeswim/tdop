@@ -12,6 +12,7 @@
  */
 function pv( $var ){
 	echo types( $var ).PHP_EOL;
+	return $var;
 }
 
 
