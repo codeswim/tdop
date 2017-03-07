@@ -6,6 +6,83 @@
  @license MIT
  */
 
+function parse(){
+	return new Parser;
+}
+
+class Parser {
+	
+}
+
+/** Prefer scope() to rather than calling new Scope directly. */
+function scope( $hint = '' ){
+	$s = new Scope;
+	$s->hint = $hint;
+	return $s;
+}
+
+/** Prefer scope() to rather than calling new Scope directly. */
+class Scope {
+	public $hint = '';
+	public $parent = null;
+	public $def = [];
+
+	public function define( Token $n, Scope $scope = null ){
+		$t = array_key_exists( $n->value, $this->def ) ? $this->def[$n->value] : null;
+		if( $t instanceof Token ){
+			$n->error( (isset( $t->reserved ) and $t->reserved) ? 'Already reserved.' : 'Already defined.' ); 
+		}
+		$this->def[$n->value] = $n;
+		$n->reserved = false;
+		$n->nud = function(){ return $this->this; }; // itself
+		$n->led = null;
+		$n->std = null;
+		$n->lbp = 0;
+		$n->scope = $scope;
+		return $n;
+	}
+
+	public function find( $n, array & $symbol_table ){
+		$e = $this;
+		$o;
+		while( true ){
+			$o = array_key_exists( $n, $e->def ) ? $e->def[$n] : null;
+			if( $o and ! is_callable( $n )) return $e->def[$n];
+			$e = $e->parent;
+			if( ! $e ){
+				$o = array_key_exists( $n, $symbol_table) ? $symbol_table[$n] : null;
+				return ($o && ! is_callable( $o ))
+				  ? $o
+				  : $symbol_table['(name)'];
+			}
+		}
+	}
+
+	public function pop( Parser $parser ){
+		$parser->scope = $this->parent;
+	}
+
+	public function reserve( $n ){
+		if( $n->arity !== 'name' or (isset($n->reserved) and $n->reserved) ) return;
+		$t = array_key_exists( $n->value, $this->def ) ? $this->def[$n->value] : null;
+		if( $t ){
+			if( $t->reserved ) return;
+			if( $t->arity === 'name' ) $n->error( 'Already defined.' );
+		}
+		$this->def[$n->value] = $n;
+		$n->reserved = true;
+	}
+
+	public function to_array(){
+		$arr = [];
+		foreach( $this->def as $key => $value ){
+			if( $value instanceof Token ) $arr[$key] = $value->to_array();
+			elseif( ! is_object( $value ) and ! is_callable( $value )) $arr[$key] = $value;
+		}	
+		return $arr;
+	}
+}
+
 /**
  Turn JavaScript source code into tokens.
  @link https://github.com/douglascrockford/TDOP/blob/master/tokens.js
