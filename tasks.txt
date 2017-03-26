@@ -1,5 +1,5 @@
 Know what you are working on
-   9. [NONE] Fix README mistakes:
+   9. [DONE] Fix README mistakes: (2017-03-26 damonz@codeswim.com)
              a. Links are shown as links instead of labels, may not be possible to fix.
              b. Change comment from /**/ to // 
              c. to_array() calls ->to_array() not ->to_token()
