@@ -6,4 +6,4 @@ error_reporting( E_ALL );
 include 'src/tdop.php';
 include 'tests/lib.php';
 
-test();
+test( array_slice( $argv, 1 ));

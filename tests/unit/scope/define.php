@@ -50,7 +50,11 @@ return [
 		'led' => null,
 		'std' => null,
 		'lbp' => 0,
-	];	
+		'scope' => [
+			'def' => [],
+			'parent' => null,
+		],
+	];
 },
 
 'Scope::define() $n scope property' => function(){

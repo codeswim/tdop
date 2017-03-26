@@ -11,7 +11,7 @@ return [
 	$n2->value = 'a';
 	$s->define( $n2 );
 	// We only care about the keys, token->to_array() and define are tested elsewhere. 
-	return array_keys( $s->to_array() ) === ['+', 'a'];
+	return array_keys( $s->to_array()['def'] ) === ['+', 'a'];
 },
 
 ];

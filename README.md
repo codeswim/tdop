@@ -32,7 +32,7 @@ Turn source code into an array of Token objects.
 	# or:
 	php tests/run
 	
-	tacos 72/72 (100.00)%
+	tacos 105/105 (100.00)% in 0s 
 
 ## Contributors
 

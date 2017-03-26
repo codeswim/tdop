@@ -1,7 +1,7 @@
 Know what you are working on
-   6. [NONE] Parse 'function a(){ var f = function(){ var a = 1; }; }'
-   5. [NONE] Parse 'function a(){ var a = 1; }'
-   4. [NONE] Implement just-enough of Parser, parse() to parse 'var a = 1;'
+   6. [DONE] Parse 'var a = function(){ var f = function(){ var a = 1; }; };' (2017-03-25 damonz@codeswim.com)
+   5. [DONE] Parse 'var a = function(){ var a = 1; };' (2017-03-25 damonz@codeswim.com)
+   4. [DONE] Implement just-enough of Parser, parse() to parse 'var a = 1;' (2017-03-25 damonz@codeswim.com)
    3. [DONE] Implement Scope, scope() (2017-03-07 damonz@codeswim.com)
    2. [DONE] Implement Token, tokens() (2017-03-05 damonz@codeswim.com)
    1. [DONE] Simplify test runner from prototype (2017-03-05 damonz@codeswim.com)
