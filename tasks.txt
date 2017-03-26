@@ -1,4 +1,9 @@
 Know what you are working on
+   9. [NONE] Fix README mistakes:
+             a. Links are shown as links instead of labels, may not be possible to fix.
+             b. Change comment from /**/ to // 
+             c. to_array() calls ->to_array() not ->to_token()
+             d. Link to license doesn't work
    8. [DONE] Make "Code Example" in README work (2017-03-26 damonz@codeswim.com)
    7. [DONE] Parse http://javascript.crockford.com/tdop/parse.js (2017-03-26 damonz@codeswim.com)
    6. [DONE] Parse 'var a = function(){ var f = function(){ var a = 1; }; };' (2017-03-25 damonz@codeswim.com)
@@ -7,4 +12,3 @@ Know what you are working on
    3. [DONE] Implement Scope, scope() (2017-03-07 damonz@codeswim.com)
    2. [DONE] Implement Token, tokens() (2017-03-05 damonz@codeswim.com)
    1. [DONE] Simplify test runner from prototype (2017-03-05 damonz@codeswim.com)
-
