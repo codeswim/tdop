@@ -1,4 +1,5 @@
 Know what you are working on
+   7. [DONE] Parse http://javascript.crockford.com/tdop/parse.js (2017-03-26 damonz@codeswim.com)
    6. [DONE] Parse 'var a = function(){ var f = function(){ var a = 1; }; };' (2017-03-25 damonz@codeswim.com)
    5. [DONE] Parse 'var a = function(){ var a = 1; };' (2017-03-25 damonz@codeswim.com)
    4. [DONE] Implement just-enough of Parser, parse() to parse 'var a = 1;' (2017-03-25 damonz@codeswim.com)

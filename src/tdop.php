@@ -857,6 +857,8 @@ class Token {
 					$arr[$key] = $value->to_array( $keys );
 				}elseif( $value instanceof Scope and method_exists( $value, 'to_array' )){
 					$arr[$key] = $value->to_array( $keys );
+				}elseif( $value instanceof stdclass ){
+					$arr[$key] = (array) $value;
 				}elseif( is_string( $value )){
 					$arr[$key] = $value;
 				}elseif( is_numeric( $value )){
