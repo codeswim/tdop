@@ -5,11 +5,11 @@ This project is a port of Douglas Crockford's Top Down Operator Precedence (TDOP
 ## Code Example
 
 	require 'src/tdop.php';
-	$js = file_get_contents( 'http://javascript.crockford.com/tdop/tokens.js' );
-	$tree = parse( $js );
-	// parse js, passing keys forces the token objects into array values
-	// but only the
-	echo json_encode( $tree->to_array(['value', 'arity', 'first', 'second']), JSON_PRETTY_PRINT ).PHP_EOL;
+	$js = file_get_contents( 'http://javascript.crockford.com/tdop/parse.js' );
+	$parser = parse( $js );
+	$tokens = $parser->parse();
+	// Passing keys forces the token objects into array values
+	echo json_encode( $tokens->to_array( ['value', 'arity', 'first', 'second'] ), JSON_PRETTY_PRINT ).PHP_EOL;
 	/* [ ... output matches http://javascript.crockford.com/tdop/index.html ... ] */
 
 ## Motivation
@@ -51,7 +51,7 @@ Return an array of tokens by calling ->to_token() on each token object.
 	# or:
 	php tests/run
 	
-	tacos 108/108 (100.00)% in 3s
+	tacos 109/109 (100.00)% in 2s 
 
 	Tests are anonymous functions that return true to indicate the test passes.
 	'test description' => function(){

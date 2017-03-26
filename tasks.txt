@@ -1,4 +1,5 @@
 Know what you are working on
+   8. [DONE] Make "Code Example" in README work (2017-03-26 damonz@codeswim.com)
    7. [DONE] Parse http://javascript.crockford.com/tdop/parse.js (2017-03-26 damonz@codeswim.com)
    6. [DONE] Parse 'var a = function(){ var f = function(){ var a = 1; }; };' (2017-03-25 damonz@codeswim.com)
    5. [DONE] Parse 'var a = function(){ var a = 1; };' (2017-03-25 damonz@codeswim.com)
@@ -6,3 +7,4 @@ Know what you are working on
    3. [DONE] Implement Scope, scope() (2017-03-07 damonz@codeswim.com)
    2. [DONE] Implement Token, tokens() (2017-03-05 damonz@codeswim.com)
    1. [DONE] Simplify test runner from prototype (2017-03-05 damonz@codeswim.com)
+
