@@ -6,7 +6,7 @@ This project is a port of Douglas Crockford's [Top Down Operator Precedence](htt
 
 ```php
 	require 'src/tdop.php';
-	$js = file_get_contents( 'http://javascript.crockford.com/tdop/parse.js' );
+	$js = file_get_contents( 'http://crockford.com/javascript/tdop/parse.js' );
 	$parser = parse( $js );
 	$tokens = $parser->parse();
 	// Passing keys forces the token objects into array values

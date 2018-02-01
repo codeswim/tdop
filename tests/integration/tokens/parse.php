@@ -2,8 +2,8 @@
 
 return [
 
-'http://javascript.crockford.com/tdop/parse.js parse' => function(){
-	$src = file_get_contents( 'http://javascript.crockford.com/tdop/parse.js' );
+'http://crockford.com/javascript/tdop/parse.js parse' => function(){
+	$src = file_get_contents( 'http://crockford.com/javascript/tdop/parse.js' );
 	if ( ! $src ){
 		echo 'No source for parse.js, skipping'.PHP_EOL;
 		return true;

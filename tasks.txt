@@ -1,4 +1,5 @@
 Know what you are working on
+  10. [DONE] Change "javascript.crockford.com" in links to "crockford.com/javascript"
    9. [DONE] Fix README mistakes: (2017-03-26 damonz@codeswim.com)
              a. Links are shown as links instead of labels, may not be possible to fix.
              b. Change comment from /**/ to // 

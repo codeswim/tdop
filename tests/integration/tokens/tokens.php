@@ -2,8 +2,8 @@
 
 return [
 
-'http://javascript.crockford.com/tdop/tokens.js tokens' => function(){
-	$src = file_get_contents( 'http://javascript.crockford.com/tdop/tokens.js' );
+'http://crockford.com/javascript/tdop/tokens.js tokens' => function(){
+	$src = file_get_contents( 'http://crockford.com/javascript/tdop/tokens.js' );
 	if ( ! $src ){
 		echo 'No source for tokens.js, skipping'.PHP_EOL;
 		return true;
