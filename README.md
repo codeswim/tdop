@@ -62,6 +62,7 @@ Tests are anonymous functions that return true to indicate the test passes.
 	return $a === [...];
 },
 ```
+To run a single test use ```./tests/run 'test description'```.
 
 Wrap variables with the ```pv()``` function (instead of ```var_dump()```, ```print_r()```, etc.) to inspect
 variables.  ```pv()``` returns what is passed into it so test results aren't changed by using it:

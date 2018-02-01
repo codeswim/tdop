@@ -79,7 +79,7 @@ function test( array $params ){
 					else $tests[$fn][$desc] = false;
 				}catch( Exception $e ){	
 					$results['failed'] += 1;
-					$tests[$fn][$desc] = $e->getMessage();
+					$tests[$fn][$desc] = $e->getMessage().PHP_EOL.$e->getTraceAsString();
 				}
 			}
 		}
